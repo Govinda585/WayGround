@@ -25,7 +25,7 @@ const SingleRow = ({ Icon, label, addIcon }) => {
     </section>
   );
 };
-const LibraryCard = () => {
+const LibraryCard = ({ setActive }) => {
   return (
     <div
       style={{
