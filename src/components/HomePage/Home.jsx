@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Search from "./Search";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-const Home = ({ setActive, toggleTheme, theme }) => {
+const Home = ({ toggleTheme, theme }) => {
   const scrollRef = useRef(null);
 
   const scroll = (scrollOffset) => {
@@ -14,7 +14,6 @@ const Home = ({ setActive, toggleTheme, theme }) => {
 
   return (
     <div>
-      <Navbar setActive={setActive} toggleTheme={toggleTheme} theme={theme} />
       <Main />
       <section style={{ display: "flex", alignItems: "center", marginTop: "50px" }}>
         <FaArrowLeft

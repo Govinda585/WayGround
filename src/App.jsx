@@ -1,10 +1,12 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import Navbar from "./components/HomePage/Navbar";
 import Home from "./components/HomePage/Home";
-import LibraryCard from "./components/HomePage/LibraryCard";
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
 
 function App() {
-  const [active, setActive] = useState(false);
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
@@ -21,8 +23,12 @@ function App() {
         transition: "all 0.3s ease",
       }}
     >
-      <Home setActive={setActive} toggleTheme={toggleTheme} theme={theme} />
-      {active && <LibraryCard />}
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <Routes>
+        <Route path="/" element={<Home toggleTheme={toggleTheme} theme={theme} />} />
+        <Route path="/login" element={<Login theme={theme} />} />
+        <Route path="/signup" element={<Signup theme={theme} />} />
+      </Routes>
     </div>
   );
 }

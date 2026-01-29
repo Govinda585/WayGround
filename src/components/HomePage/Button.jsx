@@ -10,6 +10,7 @@ const Button = ({ name, color, textColor }) => {
         color: textColor,
         borderRadius: "5px",
         fontWeight: "bold",
+        cursor: "pointer",
       }}
     >
       {name}
